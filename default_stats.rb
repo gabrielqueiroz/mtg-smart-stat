@@ -7,7 +7,7 @@ class DefaultStats
 
   def self.draw
     [
-      Stat.new(key: 'draw', terms: ['draw']), 
+      Stat.new(key: 'draw', terms: ['draw', 'card']), 
     ]
   end
 

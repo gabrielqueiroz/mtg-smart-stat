@@ -5,7 +5,7 @@ require 'json'
 class Card
   attr_accessor :name, :raw_data, :stats
 
-  def initialize(name:, raw_data: nil)
+  def initialize(name: nil, raw_data: nil)
     @name = name
     @raw_data = raw_data
 
@@ -14,6 +14,10 @@ class Card
 
   def oracle_text
     @oracle_text ||= @raw_data['oracle_text']
+  end
+
+  def name
+    @name ||= @raw_data['name']
   end
 
   def abilities
@@ -31,7 +35,7 @@ class Card
     scryfall_uri.query = URI.encode_www_form({ exact: @name })
     
     response = Net::HTTP.get_response(scryfall_uri)
-    raise CardNotFound.new(response.message) unless response.code == '200'
+    raise StandardError.new(response.message) unless response.code == '200'
 
     @raw_data = JSON.parse(response.body)
   end
