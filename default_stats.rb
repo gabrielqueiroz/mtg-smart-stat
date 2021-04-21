@@ -2,20 +2,23 @@ require './stat'
 
 class DefaultStats
   def self.all
-    draw + ramp
-  end
-
-  def self.draw
     [
-      Stat.new(key: 'draw', terms: ['draw', 'card']), 
-    ]
-  end
-
-  def self.ramp
-    [
+      # Draw
+      Stat.new(key: 'draw', terms: ['draw', 'card|cards']), 
+      # Ramp
       Stat.new(key: 'ramp', terms: ["(#{Stat.lands_terms.join('|')})", 'onto the battlefield']),
-      Stat.new(key: 'ramp', terms: ['play', 'additional lands']), # Azusa
-      Stat.new(key: 'ramp', terms: ['{T}:', 'Add', "(#{Stat.mana_symbols.join('|')})"]), # Sol Ring / Mana dork
+      Stat.new(key: 'ramp', terms: ['play', 'additional lands']),
+      Stat.new(key: 'ramp', terms: ['{T}:', 'add', "(#{Stat.mana_symbols.join('|')})"]),
+      # Single target removal
+      Stat.new(key: 'single target removal', terms: ['destroy target']),
+      Stat.new(key: 'single target removal', terms: ['exile target']),
+      # Board Wipes
+      Stat.new(key: 'board wipe', terms: ['destroy all']),
+      Stat.new(key: 'board wipe', terms: ['exile all']),
+      Stat.new(key: 'board wipe', terms: ['return all']),
+      # Board Wipes with Overload
+      Stat.new(key: 'board wipe', terms: ['destroy target', "you don't control", 'overload']),
+      Stat.new(key: 'board wipe', terms: ['return target', "you don't control", 'overload']),
     ]
   end
 end

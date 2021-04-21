@@ -9,28 +9,32 @@ class Deck
 
   def initialize(file:)
     @raw_cards = File.open(file).readlines.map(&:chomp)
-
     find_deck!
   end
 
-  def analyze_deck
-    @cards = @raw_data.map { |data| Card.new(raw_data: data) }
+  def cards
+    @cards ||= @raw_data.map { |data| Card.new(raw_data: data) }
+  end
 
+  def analyze_deck
     summarize_cards
     overall_stats
   end
 
-  private
   def summarize_cards
     @cards.each do |card|
-      puts "#{card.name} - #{card.stats}"
+      {
+        name: card.name,
+        stat: card.stats
+      }
     end
   end
 
   def overall_stats
-    @cards.map { |card| card.stats }.inject(Hash.new(0)) { |h,i| h[i] += 1; h }
+    @cards.map { |card| card.stats }.inject(Hash.new(0)) { |h,i| h[i] += 1; h }.to_json
   end
 
+  private
   def find_deck!
     @raw_data = Array.new
     while @raw_cards.any?   

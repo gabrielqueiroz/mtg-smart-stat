@@ -7,7 +7,7 @@ class Stat
   end
 
   def match?(ability)
-    ability.match? terms.join('.*')
+    ability.downcase.match? terms.join('.*').downcase
   end
 
   def self.mana_symbols

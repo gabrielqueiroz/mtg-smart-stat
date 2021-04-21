@@ -26,7 +26,6 @@ class Card
 
   def stats
     return [] if @raw_data['type_line'].downcase.include?('land')
-
     DefaultStats.all.select { |stat| stat.match?(oracle_text) }.map(&:key)
   end 
 

@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.scryfall.com/cards/named?exact=Vandalblast
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.scryfall.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 19 Apr 2021 04:44:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d84ecc178669bb15856c6f2a002112e0b1618807454; expires=Wed, 19-May-21
+        04:44:14 GMT; path=/; domain=.scryfall.com; HttpOnly; SameSite=Lax; Secure
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - Accept, Accept-Charset, Accept-Language, Authorization, Cache-Control, Content-Language,
+        Content-Type, DNT, Host, If-Modified-Since, Keep-Alive, Origin, Referer, User-Agent,
+        X-Requested-With
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - max-age=7200
+      X-Robots-Tag:
+      - none
+      X-Action-Cache:
+      - HIT
+      X-Scryfall-Card-Image:
+      - https://c1.scryfall.com/file/scryfall-cards/large/front/5/2/52cf5c10-99aa-4580-8016-9bbb43dbdb00.jpg?1562704317
+      X-Scryfall-Card:
+      - https://scryfall.com/card/c15/170/vandalblast?utm_source=api
+      Content-Disposition:
+      - inline
+      Content-Transfer-Encoding:
+      - binary
+      Vary:
+      - Accept,Accept-Encoding
+      Etag:
+      - W/"f3203e25113a976e0a005bc89daae54c"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 vegur
+      Cf-Cache-Status:
+      - HIT
+      Age:
+      - '5541'
+      Cf-Request-Id:
+      - '098a0a93a50000137e2bb7c000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=2ABDEc2wsFQfYVWYpU83c6TbQZ6PA7qvCYHpfkoXRekvgZveiD5Kphfd5dtIvcImXBhe8b5s7NvMacqkpBuW%2BF9680ZNwsb77AL%2ByVEqpVVikHY4IJxuC0UDLizT"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"max_age":604800,"report_to":"cf-nel"}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 642379ff6ed7137e-YVR
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"object":"card","id":"52cf5c10-99aa-4580-8016-9bbb43dbdb00","oracle_id":"3567c3c8-b3c7-45b7-935b-b1fdbc973720","multiverse_ids":[405431],"tcgplayer_id":108061,"cardmarket_id":285930,"name":"Vandalblast","lang":"en","released_at":"2015-11-13","uri":"https://api.scryfall.com/cards/52cf5c10-99aa-4580-8016-9bbb43dbdb00","scryfall_uri":"https://scryfall.com/card/c15/170/vandalblast?utm_source=api","layout":"normal","highres_image":true,"image_status":"highres_scan","image_uris":{"small":"https://c1.scryfall.com/file/scryfall-cards/small/front/5/2/52cf5c10-99aa-4580-8016-9bbb43dbdb00.jpg?1562704317","normal":"https://c1.scryfall.com/file/scryfall-cards/normal/front/5/2/52cf5c10-99aa-4580-8016-9bbb43dbdb00.jpg?1562704317","large":"https://c1.scryfall.com/file/scryfall-cards/large/front/5/2/52cf5c10-99aa-4580-8016-9bbb43dbdb00.jpg?1562704317","png":"https://c1.scryfall.com/file/scryfall-cards/png/front/5/2/52cf5c10-99aa-4580-8016-9bbb43dbdb00.png?1562704317","art_crop":"https://c1.scryfall.com/file/scryfall-cards/art_crop/front/5/2/52cf5c10-99aa-4580-8016-9bbb43dbdb00.jpg?1562704317","border_crop":"https://c1.scryfall.com/file/scryfall-cards/border_crop/front/5/2/52cf5c10-99aa-4580-8016-9bbb43dbdb00.jpg?1562704317"},"mana_cost":"{R}","cmc":1.0,"type_line":"Sorcery","oracle_text":"Destroy
+        target artifact you don''t control.\nOverload {4}{R} (You may cast this spell
+        for its overload cost. If you do, change its text by replacing all instances
+        of \"target\" with \"each.\")","colors":["R"],"color_identity":["R"],"keywords":["Overload"],"legalities":{"standard":"not_legal","future":"not_legal","historic":"not_legal","gladiator":"not_legal","pioneer":"legal","modern":"legal","legacy":"legal","pauper":"not_legal","vintage":"legal","penny":"legal","commander":"legal","brawl":"not_legal","duel":"legal","oldschool":"not_legal","premodern":"not_legal"},"games":["paper"],"reserved":false,"foil":false,"nonfoil":true,"oversized":false,"promo":false,"reprint":true,"variation":false,"set":"c15","set_name":"Commander
+        2015","set_type":"commander","set_uri":"https://api.scryfall.com/sets/ea6c99f9-5489-4504-b30c-c819fa3b1fd3","set_search_uri":"https://api.scryfall.com/cards/search?order=set\u0026q=e%3Ac15\u0026unique=prints","scryfall_set_uri":"https://scryfall.com/sets/c15?utm_source=api","rulings_uri":"https://api.scryfall.com/cards/52cf5c10-99aa-4580-8016-9bbb43dbdb00/rulings","prints_search_uri":"https://api.scryfall.com/cards/search?order=released\u0026q=oracleid%3A3567c3c8-b3c7-45b7-935b-b1fdbc973720\u0026unique=prints","collector_number":"170","digital":false,"rarity":"uncommon","flavor_text":"Beauty
+        is in the eye of the exploder.","card_back_id":"0aeebaf5-8c7d-4636-9e82-8c27447861f7","artist":"Seb
+        McKinnon","artist_ids":["ad4caca0-8d89-44ce-a1a6-d5ca905bd6fb"],"illustration_id":"ef5cd102-5424-405d-8342-dabf06d6bca5","border_color":"black","frame":"2015","full_art":false,"textless":false,"booster":false,"story_spotlight":false,"edhrec_rank":101,"prices":{"usd":"7.90","usd_foil":null,"eur":"2.50","eur_foil":null,"tix":null},"related_uris":{"gatherer":"https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=405431","tcgplayer_infinite_articles":"https://infinite.tcgplayer.com/search?contentMode=article\u0026game=magic\u0026partner=scryfall\u0026q=Vandalblast\u0026utm_campaign=affiliate\u0026utm_medium=api\u0026utm_source=scryfall","tcgplayer_infinite_decks":"https://infinite.tcgplayer.com/search?contentMode=deck\u0026game=magic\u0026partner=scryfall\u0026q=Vandalblast\u0026utm_campaign=affiliate\u0026utm_medium=api\u0026utm_source=scryfall","edhrec":"https://edhrec.com/route/?cc=Vandalblast","mtgtop8":"https://mtgtop8.com/search?MD_check=1\u0026SB_check=1\u0026cards=Vandalblast"},"purchase_uris":{"tcgplayer":"https://shop.tcgplayer.com/product/productsearch?id=108061\u0026utm_campaign=affiliate\u0026utm_medium=api\u0026utm_source=scryfall","cardmarket":"https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall\u0026searchString=Vandalblast\u0026utm_campaign=card_prices\u0026utm_medium=text\u0026utm_source=scryfall","cardhoarder":"https://www.cardhoarder.com/cards?affiliate_id=scryfall\u0026data%5Bsearch%5D=Vandalblast\u0026ref=card-profile\u0026utm_campaign=affiliate\u0026utm_medium=card\u0026utm_source=scryfall"}}'
+  recorded_at: Mon, 19 Apr 2021 04:44:14 GMT
+recorded_with: VCR 6.0.0
