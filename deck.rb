@@ -1,6 +1,7 @@
 require './card'
 require 'net/http'
 require 'json'
+require 'tty-markdown'
 
 class Deck
   attr_accessor :raw_cards, :raw_data
@@ -14,6 +15,19 @@ class Deck
 
   def cards
     @cards ||= @raw_data.map { |data| Card.new(raw_data: data) }
+  end
+
+  def analyze_deck
+    output = <<~HEREDOC
+      | **Card** | **Type** | **Stats** |
+      |----------|:---------|:----------|
+    HEREDOC
+
+    summary.sort_by{ |k| k[:name] }.sort_by{ |k| k[:supertype] }.each do |card|
+      output << "| #{card[:name]} | #{card[:supertype]} | #{card[:stats].join(', ')} |\n"
+    end
+
+    TTY::Markdown.parse(output)
   end
 
   def summary

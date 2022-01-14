@@ -9,7 +9,11 @@ GEM
       rexml
     diff-lcs (1.4.4)
     hashdiff (1.0.1)
+    kramdown (2.3.1)
+      rexml
     method_source (1.0.0)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -18,6 +22,7 @@ GEM
       pry (~> 0.13.0)
     public_suffix (4.0.6)
     rexml (3.2.5)
+    rouge (3.27.0)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -31,6 +36,22 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
+    strings (0.2.1)
+      strings-ansi (~> 0.2)
+      unicode-display_width (>= 1.5, < 3.0)
+      unicode_utils (~> 1.4)
+    strings-ansi (0.2.0)
+    tty-color (0.6.0)
+    tty-markdown (0.7.0)
+      kramdown (>= 1.16.2, < 3.0)
+      pastel (~> 0.8)
+      rouge (~> 3.14)
+      strings (~> 0.2.0)
+      tty-color (~> 0.5)
+      tty-screen (~> 0.8)
+    tty-screen (0.8.1)
+    unicode-display_width (2.1.0)
+    unicode_utils (1.4.0)
     vcr (6.0.0)
     webmock (3.12.2)
       addressable (>= 2.3.6)
@@ -44,6 +65,7 @@ DEPENDENCIES
   pry
   pry-byebug
   rspec
+  tty-markdown
   vcr
   webmock
 
