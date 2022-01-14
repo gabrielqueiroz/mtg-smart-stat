@@ -16,22 +16,19 @@ class Deck
     @cards ||= @raw_data.map { |data| Card.new(raw_data: data) }
   end
 
-  def analyze_deck
-    summarize_cards
-    overall_stats
-  end
-
-  def summarize_cards
-    @cards.each do |card|
+  def summary
+    cards.map do |card|
       {
         name: card.name,
-        stat: card.stats
+        supertype: card.supertype,
+        subtype: card.subtype,
+        stats: card.stats,
       }
     end
   end
 
-  def overall_stats
-    @cards.map { |card| card.stats }.inject(Hash.new(0)) { |h,i| h[i] += 1; h }.to_json
+  def stats
+    cards.map { |card| card.stats }.inject(Hash.new(0)) { |h,i| h[i] += 1; h }
   end
 
   private

@@ -12,13 +12,14 @@ class DefaultStats
       # Single target removal
       Stat.new(key: 'single target removal', terms: ['destroy target']),
       Stat.new(key: 'single target removal', terms: ['exile target']),
+      Stat.new(key: 'single target removal', terms: ['return target']),
       # Board Wipes
       Stat.new(key: 'board wipe', terms: ['destroy all']),
       Stat.new(key: 'board wipe', terms: ['exile all']),
       Stat.new(key: 'board wipe', terms: ['return all']),
       # Board Wipes with Overload
-      Stat.new(key: 'board wipe', terms: ['destroy target', "you don't control", 'overload']),
-      Stat.new(key: 'board wipe', terms: ['return target', "you don't control", 'overload']),
+      Stat.new(key: 'board wipe', terms: ['destroy target', '\noverload']),
+      Stat.new(key: 'board wipe', terms: ['return target', '\noverload']),
     ]
   end
 end

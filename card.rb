@@ -20,13 +20,25 @@ class Card
     @name ||= @raw_data['name']
   end
 
+  def supertype
+    @supertype ||= @raw_data['type_line'].split("—").first.strip
+  end
+  
+  def subtype
+    @subtype ||= if @raw_data['type_line'].split("—").size > 1
+      @raw_data['type_line'].split("—").last.strip
+    else
+      nil
+    end
+  end
+
   def abilities
     @abilities ||= oracle_text&.split("\n")
   end
 
   def stats
     return [] if @raw_data['type_line'].downcase.include?('land')
-    DefaultStats.all.select { |stat| stat.match?(oracle_text) }.map(&:key)
+    DefaultStats.all.select { |stat| stat.match?(oracle_text) }.map(&:key) || nil
   end 
 
   private
